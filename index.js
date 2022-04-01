@@ -100,6 +100,7 @@ const usersByGender = users.reduce((acc, cur) => {
 }, {});
 /* console.log(usersByGender); */
 
+
 // --- SORT ---
 // Ordena por nome
 // Ordena pelo peso
