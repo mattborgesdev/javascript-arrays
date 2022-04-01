@@ -33,6 +33,13 @@ const users = [{
     gender: 'female',
     city: 'Bauru',
     state: 'SP'
+},{
+    name: 'Zézinho',
+    age: 102,
+    weight: 56.4,
+    gender: 'male',
+    city: 'Salvador',
+    state: 'BA'
 }];
 
 
@@ -103,58 +110,53 @@ const usersByGender = users.reduce((acc, cur) => {
 
 // --- SORT ---
 // Ordena por nome
+const sortByName = users.sort((a,b) => a.name.localeCompare(b.name));
+/* console.log(sortByName); */
+
 // Ordena pelo peso
+const sortByWeight = users.sort((a,b) => a.weight - b.weight);
+/* console.log(sortByWeight); */
+
 // Ordena pela idade
+const sorteByAge = users.sort((a,b) => a.age - b.age);
+/* console.log(sorteByAge); */
+
 // Ordena pelo gênero
+const sortByGender = users.sort((a,b) => a.gender.localeCompare(b.gender));
+/* console.log(sortByGender); */
 
 
 // --- EVERY ---
 // Todos os usuários são de SP?
-const everyUsersSP = users.every((user) => {
-    return user.state === 'SP';
-})
+const everyUsersSP = users.every(user => user.state === 'SP');
 /* console.log(everyUsersSP); */
 
 // Todos os usuários tem mais que 100 kg?
-const everyAbove100kg = users.every((user) => {
-    return user.weight > 100;
-})
+const everyAbove100kg = users.every(user => user.weight > 100);
 /* console.log(everyAbove100kg); */
 
 // Todos os usuários tem menos de 90 anos?
-const everyBelow90years = users.every((user) => {
-    return user.age < 90;
-})
+const everyBelow90years = users.every(user => user.age < 90);
 /* console.log(everyBelow90years); */
 
 // todos os usuários são masculinos?
-const everyMaleGender = users.every((user) => {
-    return user.gender === 'male';
-})
+const everyMaleGender = users.every(user => user.gender === 'male');
 /* console.log(everyMaleGender); */
 
 
 // --- SOME ---
 // Tem pelo menos um usuário de SP?
-const oneUserSP = users.some((user) => {
-    return user.state === 'SP'; 
-});
+const oneUserSP = users.some(user => user.state === 'SP');
 /* console.log(oneUserSP); */
 
 // Tem pelo menos um usuário acima de 100 kg?
-const above100kg = users.some((user) => {
-    return user.weight > 100;
-})
+const above100kg = users.some(user => user.weight > 100);
 /* console.log(above100kg); */
 
 // Tem pelo menos um usuário com menos de 90 anos?
-const some90years = users.some((user) => {
-    return user.age < 90;
-})
+const some90years = users.some(user => user.age < 90);
 /* console.log(some90years); */
 
 // Tem pelo menos um usuário masculino?
-const someGenderMasc = users.some((user) => {
-    return user.gender === 'male';
-})
+const someGenderMasc = users.some(user => user.gender === 'male');
 /* console.log(someGenderMasc); */
